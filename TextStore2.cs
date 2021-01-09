@@ -1,5 +1,4 @@
 ﻿//#define TSF_DEBUG_OUTPUT
-#define METRO
 using System;
 using System.Text;
 using System.Diagnostics;
@@ -14,6 +13,7 @@ using DotNetTextStore.UnmanagedAPI.WinError;
 
 namespace DotNetTextStore
 {
+#if METRO
     public sealed class TextStore2 : TextStoreBase, IDisposable, ITextStoreACP2, ITfContextOwnerCompositionSink
     {
         #region 生成と破棄
@@ -43,4 +43,6 @@ namespace DotNetTextStore
 
         #endregion
     }
+#else
+#endif
 }
